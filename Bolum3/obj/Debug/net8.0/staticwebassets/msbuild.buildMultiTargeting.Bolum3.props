@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Bolum3.props" />
+</Project>
