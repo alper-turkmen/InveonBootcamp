@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:data\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\helpers\\customidentityerror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:helpers\\customidentityerror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\data\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:data\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:data\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|c:\\users\\alper\\desktop\\2\\kutuphaneyonetima\\kutuphaneyonetima\\kutuphaneyonetim\\kutuphaneyonetim.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DDFAEAD2-91B1-4DEB-B186-59CBE7AF114E}|KutuphaneYonetim.csproj|solutionrelative:kutuphaneyonetim.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-17T08:11:46.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AgIAAAEAAABAXWZmZuYswBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T08:01:06.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Data\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\UnitOfWork.cs",
+              "RelativeToolTip": "Data\\UnitOfWork.cs",
+              "ViewState": "AgIAAAoAAACA8v///38QwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:59:12.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomIdentityError.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Helpers\\CustomIdentityError.cs",
+              "RelativeDocumentMoniker": "Helpers\\CustomIdentityError.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Helpers\\CustomIdentityError.cs",
+              "RelativeToolTip": "Helpers\\CustomIdentityError.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:59:18.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\ApplicationDBContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDBContext.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\ApplicationDBContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDBContext.cs",
+              "ViewState": "AgIAACUAAAAAlpmZmdkmwFQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:55:43.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Data\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\IUnitOfWork.cs",
+              "RelativeToolTip": "Data\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:51:37.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\Repository.cs",
+              "RelativeDocumentMoniker": "Data\\Repository.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\Repository.cs",
+              "RelativeToolTip": "Data\\Repository.cs",
+              "ViewState": "AgIAAA4AAAAA/////z8twAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:51:28.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\IRepository.cs",
+              "RelativeDocumentMoniker": "Data\\IRepository.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Data\\IRepository.cs",
+              "RelativeToolTip": "Data\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:51:19.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAA+JmZmZnRvw0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:48:16.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:48:14.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "KutuphaneYonetim",
+              "DocumentMoniker": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\KutuphaneYonetim.csproj",
+              "RelativeDocumentMoniker": "KutuphaneYonetim.csproj",
+              "ToolTip": "C:\\Users\\alper\\Desktop\\2\\KutuphaneYonetima\\KutuphaneYonetima\\KutuphaneYonetim\\KutuphaneYonetim.csproj",
+              "RelativeToolTip": "KutuphaneYonetim.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-17T07:48:06.422Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

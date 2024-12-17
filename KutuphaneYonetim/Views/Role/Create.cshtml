@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Rol Ekleme";
+}
+
+<h1>Rol Ekle</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="roleName">Rol Adı</label>
+        <input type="text" name="roleName" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

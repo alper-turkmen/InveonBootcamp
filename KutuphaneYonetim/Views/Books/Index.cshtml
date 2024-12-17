@@ -1,0 +1,44 @@
+@model IEnumerable<KutuphaneYonetim.Models.Book>
+
+@{
+    ViewData["Title"] = "Kitap Listeleme";
+}
+
+<h1>Kitap Listesi</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Kapak Fotoğrafı</th>
+            <th>Adı</th>
+            <th>Yazarı</th>
+            <th>Yayın Yılı</th>
+            <th>ISBN</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(book.CoverImagePath))
+                    {
+                        <img src="@book.CoverImagePath" alt="@book.Title" style="width:50px; height:auto;" />
+                    }
+                    else
+                    {
+                        <span>Resim yok</span>
+                    }
+                </td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.PublicationYear</td>
+                <td>@book.ISBN</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

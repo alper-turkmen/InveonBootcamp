@@ -1,0 +1,23 @@
+@model KutuphaneYonetim.Models.Book
+
+@{
+    ViewData["Title"] = "Kitap Detayları";
+}
+
+<h1>@Model.Title</h1>
+<img src="@Model.CoverImagePath" alt="@Model.Title" style="width:200px; height:auto;" />
+<br />
+<br />
+
+<p><strong>ID:</strong> @Model.Id</p>
+<p><strong>Yazar:</strong> @Model.Author</p>
+<p><strong>Yayın Yılı:</strong> @Model.PublicationYear</p>
+<p><strong>ISBN:</strong> @Model.ISBN</p>
+<p><strong>Tür:</strong> @Model.Genre</p>
+<p><strong>Yayıncı:</strong> @Model.Publisher</p>
+<p><strong>Sayfa Sayısı:</strong> @Model.PageCount</p>
+<p><strong>Dil:</strong> @Model.Language</p>
+<p><strong>Özet:</strong> @Model.Summary</p>
+<p><strong>Mevcut Kopya:</strong> @Model.AvailableCopies</p>
+
+<a asp-action="Index" class="btn btn-secondary">Geri Dön</a>

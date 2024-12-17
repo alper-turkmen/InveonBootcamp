@@ -1,0 +1,18 @@
+@model Microsoft.AspNetCore.Identity.IdentityRole
+
+@{
+    ViewData["Title"] = "Rol Silme Onayı";
+}
+
+<h1>Rol Silme Onayı</h1>
+
+<p><strong>Rol Adı:</strong> @Model.Name</p>
+
+<p>Bu rolü silmek istediğinize emin misiniz?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="List" class="btn btn-secondary">İptal</a>
+</form>
