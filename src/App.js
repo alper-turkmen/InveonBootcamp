@@ -1,7 +1,4 @@
 import React, { useCallback, useEffect, useMemo, useReducer, useState } from "react";
-
-
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CourseDetailPage from './pages/CourseDetailPage';
