@@ -1,1 +1,1 @@
-export const SITE_NAME = 'SenAkademi';
+export const SITE_NAME = 'AçıkAkademi';
