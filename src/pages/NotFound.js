@@ -11,7 +11,7 @@ const NotFound = () => {
             Sayfa Bulunamadı
           </h2>
           <p className="mt-2 text-gray-600">
-            Aradığınız sayfa mevcut değil veya taşınmış olabilir.
+            Aradığınız sayfa mevcut değil
           </p>
         </div>
         

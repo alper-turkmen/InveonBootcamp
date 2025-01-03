@@ -6,10 +6,18 @@ import { SITE_NAME } from '../consts/consts';
 const Footer = () => {
 
   return (
-    <footer className="bg-gray-900 text-white py-6">
-    <div className="container mx-auto text-center">
-      &copy; 2025 {SITE_NAME}. Tüm Hakları Saklıdır.
+    <footer className="bg-gray-800 text-white py-6">
+     
+
+    <div className="flex justify-center items-center container mx-auto">
+    <div className="text-xl font-bold text-purple-600 container mx-auto text-center
+            bg-clip-text text-transparent bg-gradient-to-b from-purple-400 to-purple-900">
+      &copy; 2025 {SITE_NAME}
     </div>
+    </div>
+
+
+     
     </footer>
   );
 };

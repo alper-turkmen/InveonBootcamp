@@ -14,7 +14,8 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-purple-600">
+        <Link to="/" className="text-2xl font-bold text-purple-600 
+        bg-clip-text text-transparent bg-gradient-to-b from-purple-400 to-purple-900">
           {SITE_NAME}
         </Link>
         <div className="hidden md:flex space-x-6">
@@ -49,7 +50,8 @@ const Navbar = () => {
           </Link>
           <Link 
             to="/register" 
-            className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
+            className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 
+            bg-gradient-to-b from-purple-400 to-purple-700"
           >
             Kayıt Ol
           </Link>
