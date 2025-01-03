@@ -7,6 +7,8 @@ import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import NotFound from "./pages/NotFound";
+import WatchCourse from "./pages/WatchCourse";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/watch" element={<WatchCourse />} />
       </Routes>
       <Footer />
 
