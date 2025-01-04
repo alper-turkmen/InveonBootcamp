@@ -8,7 +8,6 @@ import { SITE_NAME } from '../consts/consts';
 const HomePage = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
-      {/* Hero Section */}
       <section className="bg-purple-600 text-white py-16 bg-gradient-to-b from-purple-400 to-purple-700">
         <div className="container mx-auto text-center px-4">
           <h1 className="text-4xl font-bold mb-4">Hayallerine Ulaşmak İçin Kurslarını Keşfet</h1>
@@ -26,8 +25,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-10 bg-gray-100 mb-4">
+      <section className="py-12 bg-gray-100">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-3xl text-gray-700 font-bold mb-10">Neden {SITE_NAME}?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -50,7 +48,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Courses Section */}
       <section className="py-10 bg-white">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-2">Popüler Kurslar</h2>

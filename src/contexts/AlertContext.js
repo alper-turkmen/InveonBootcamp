@@ -26,7 +26,7 @@ export const SnackbarProvider = ({ children }) => {
         {snackbars.map((snackbar) => (
           <div
             key={snackbar.id}
-            className={`flex items-center p-4 text-sm rounded-lg shadow-lg ${
+            className={`flex items-center p-4 m-4 text-sm rounded-lg shadow-lg ${
               snackbar.type === 'success'
                 ? 'bg-green-200 text-green-800'
                 : snackbar.type === 'error'

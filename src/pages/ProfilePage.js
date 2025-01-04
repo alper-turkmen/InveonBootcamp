@@ -150,7 +150,6 @@ const ProfilePage = () => {
                 </div>
               </div>
 
-              {/* Profil Bilgileri */}
               <div className="space-y-4">
                 <InputField
                   id="firstName"
