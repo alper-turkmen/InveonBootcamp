@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SITE_NAME } from '../consts/consts';
+import { useAuth } from '../contexts/AuthContext'; 
+import { useState } from 'react';
+import { API_URL } from '../consts/consts';
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+  const [profileImage, setProfileImage] = useState(user?.profilePicture || '/default-profile.png');
+
   const categories = [
     "Yazılım Geliştirme",
     "Veri Bilimi",
@@ -18,6 +24,7 @@ const Navbar = () => {
         bg-clip-text text-transparent bg-gradient-to-b from-purple-400 to-purple-900">
           {SITE_NAME}
         </Link>
+
         <div className="hidden md:flex space-x-6">
           <div className="relative group">
             <a href="#" className="text-gray-700 hover:text-purple-600">
@@ -41,20 +48,70 @@ const Navbar = () => {
           <Link to="/courses" className="text-gray-700 hover:text-purple-600">Popüler Kurslar</Link>
           <Link to="/about" className="text-gray-700 hover:text-purple-600">Hakkımızda</Link>
         </div>
-        <div className="hidden md:flex space-x-4">
-          <Link 
-            to="/login" 
-            className="text-gray-700 hover:text-purple-600 px-4 py-2 flex items-center"
-          >
-            Giriş Yap
-          </Link>
-          <Link 
-            to="/register" 
-            className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 
-            bg-gradient-to-b from-purple-400 to-purple-700"
-          >
-            Kayıt Ol
-          </Link>
+
+        <div className="hidden md:flex space-x-2 items-center">
+          {user ? (
+            <>
+             <div className="flex items-center space-x-2 py-2">
+  <Link
+    to="/profile"
+    className="flex items-center space-x-3 text-gray-700 hover:text-purple-600 px-2 py-2"
+  >
+    <img 
+      src={API_URL + profileImage}
+      alt="Profil Resmi" 
+      className="w-10 h-10 rounded-full border-2 border-purple-500 object-cover" 
+    />
+    <span>Merhaba, {user.firstName}</span>
+  </Link>
+</div>
+             
+
+            
+
+              {user.roles && user.roles.includes('Teacher') && (
+                <Link
+                  to="/teacher-dashboard"
+                  className="text-gray-700 hover:text-purple-600 px-2 py-2"
+                >
+                  Eğitmen Alanı
+                </Link>
+              )}
+
+              {user.roles && user.roles.includes('User') && (
+                <Link
+                  to="/user-dashboard"
+                  className="text-gray-700 hover:text-purple-600 px-2 py-2"
+                >
+                  Kurslarım
+                </Link>
+              )}
+
+              {/* Çıkış Yap Butonu */}
+              <button
+                onClick={logout} 
+                className="text-gray-700 hover:text-purple-600 px-2 py-2"
+              >
+                Çıkış Yap
+              </button>
+            </>            
+          ) : (
+            <>
+              <Link 
+                to="/login" 
+                className="text-gray-700 hover:text-purple-600 px-2 py-2 flex items-center"
+              >
+                Giriş Yap
+              </Link>
+              <Link 
+                to="/register" 
+                className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 
+                bg-gradient-to-b from-purple-400 to-purple-700"
+              >
+                Kayıt Ol
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

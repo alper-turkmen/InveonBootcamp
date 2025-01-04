@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({
+const MiniButton = ({
   type = 'button',
   text,
   onClick,
@@ -16,7 +16,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      className={`group relative w-full flex justify-center py-2 px-4 border border-transparent 
+      className={`group  flex justify-center py-2 px-4 border border-transparent 
       text-sm font-medium rounded-md text-white ${baseColor} 
       focus:outline-none focus:ring-2 focus:ring-offset-2`}
     >
@@ -25,4 +25,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default MiniButton;

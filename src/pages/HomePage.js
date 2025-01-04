@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-purple-600 text-white py-16 bg-gradient-to-b from-purple-400 to-purple-900">
+      <section className="bg-purple-600 text-white py-16 bg-gradient-to-b from-purple-400 to-purple-700">
         <div className="container mx-auto text-center px-4">
           <h1 className="text-4xl font-bold mb-4">Hayallerine Ulaşmak İçin Kurslarını Keşfet</h1>
           <p className="text-lg mb-6">Binlerce kurs arasından sana uygun olanı bul ve öğrenmeye başla</p>

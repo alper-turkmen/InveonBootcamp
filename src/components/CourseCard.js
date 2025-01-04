@@ -6,7 +6,7 @@
         <h3 className="text-lg font-bold">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
         <p className="text-gray-600 mt-2">Eğitmen: {instructor}</p>
-        <button className="mt-4 bg-purple-600 text-white py-2 rounded-lg w-full">
+        <button className="mt-4 bg-purple-500 text-white py-2 rounded-lg w-full">
           Detayları Gör
         </button>
       </div>

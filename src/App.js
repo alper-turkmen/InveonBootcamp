@@ -1,5 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useReducer, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { AuthProvider } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
+
+
 import HomePage from './pages/HomePage';
 import CourseDetailPage from './pages/CourseDetailPage';
 import LoginPage from './pages/LoginPage';
@@ -9,10 +14,19 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NotFound from "./pages/NotFound";
 import WatchCourse from "./pages/WatchCourse";
+import { SnackbarProvider } from "./contexts/AlertContext";
+import TeacherDashboard from "./pages/TeacherPages/TeacherDashboard";
 
 function App() {
   return (
     <Router>
+
+    <SnackbarProvider>
+
+    <AuthProvider>
+      <CartProvider>
+
+
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -22,10 +36,15 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/watch" element={<WatchCourse />} />
+        <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
       </Routes>
       <Footer />
 
+    </CartProvider>
+    </AuthProvider>
+    </SnackbarProvider>
     </Router>
+
   );
 }
 
