@@ -8,6 +8,7 @@ Bu repo, Inveon Bootcamp kapsamında yapılan bitirme ödevi için oluşturulmu�
 Bu ödevde, bir kurs satış sitesi yapılmıştır.
 
 ## Proje acikakademi.alperturkmen.com adresinde Docker ile canlıya alınmıştır. Docker ve Nginx dosyaları da bu repoda bulunmaktadır.
+[https://acikakademi.alperturkmen.com](https://acikakademi.alperturkmen.com)
 
 #### Bilinen Kısıtlamalar
 
