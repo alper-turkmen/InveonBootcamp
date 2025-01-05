@@ -22,6 +22,8 @@ import WatchCourse from "./pages/WatchCourse";
 import { SnackbarProvider } from "./contexts/AlertContext";
 import TeacherDashboard from "./pages/TeacherPages/TeacherDashboard";
 import EditCoursePage from "./pages/TeacherPages/EditCoursePage";
+import UserDashboard from "./pages/UserPages/UserDashboard";
+import UserCart from "./pages/UserPages/UserCart";
 
 function App() {
   return (
@@ -37,9 +39,11 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="*" element={<NotFound />} />
-              <Route path="/watch" element={<WatchCourse />} />
+              <Route path="/watch/:id" element={<WatchCourse />} />
               <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
               <Route path="/edit-course/:id" element={<EditCoursePage />} />
+              <Route path="/user-dashboard" element={<UserDashboard />} />
+              <Route path="/cart" element={<UserCart />} />
             </Routes>
             <Footer />
           </CartProvider>

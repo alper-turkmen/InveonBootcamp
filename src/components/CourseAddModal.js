@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
   const [coverImage, setCoverImage] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   if (!isOpen) return null;
@@ -14,27 +14,27 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
     const selectedFile = e.target.files[0];
 
     setCoverImage(selectedFile);
-    setError('');
+    setError("");
   };
 
   const handleAdd = () => {
     if (!title.trim()) {
-      setError('Başlık boş olamaz!');
+      setError("Başlık boş olamaz!");
       return;
     }
 
     if (!description.trim()) {
-      setError('Açıklama boş olamaz!');
+      setError("Açıklama boş olamaz!");
       return;
     }
 
     if (!price || isNaN(price)) {
-      setError('Geçerli bir fiyat giriniz!');
+      setError("Geçerli bir fiyat giriniz!");
       return;
     }
 
     if (!coverImage) {
-      setError('Kapak resmi seçilmelidir!');
+      setError("Kapak resmi seçilmelidir!");
       return;
     }
 
@@ -42,16 +42,16 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
 
     const reader = new FileReader();
     reader.onload = () => {
-      const base64String = reader.result.split(',')[1]; 
+      const base64String = reader.result.split(",")[1];
 
       onAddCourse(title, description, base64String, price, coverImage.name)
         .then(() => {
           setLoading(false);
-          onClose(); 
+          onClose();
         })
         .catch(() => {
-          setLoading(false); 
-          setError('Kurs eklenirken bir hata oluştu!');
+          setLoading(false);
+          setError("Kurs eklenirken bir hata oluştu!");
         });
     };
 
@@ -64,7 +64,6 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
         <div className="p-4 border-b">
           <h3 className="text-lg font-semibold">Yeni Kurs Ekle</h3>
 
-          {/* Başlık */}
           <label className="block mt-4">Başlık</label>
           <input
             type="text"
@@ -74,7 +73,6 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
             className="w-full border p-2 rounded-md mt-1"
           />
 
-          {/* Açıklama */}
           <label className="block mt-4">Açıklama</label>
           <textarea
             placeholder="Kurs Açıklaması"
@@ -84,7 +82,6 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
             rows="3"
           ></textarea>
 
-          {/* Fiyat */}
           <label className="block mt-4">Fiyat</label>
           <input
             type="number"
@@ -94,7 +91,6 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
             className="w-full border p-2 rounded-md mt-1"
           />
 
-          {/* Kapak Resmi */}
           <label className="block mt-4">Kapak Resmi</label>
           <input
             type="file"
@@ -118,8 +114,8 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
             onClick={handleAdd}
             className={`px-4 py-2 text-white rounded-md ${
               loading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-green-600 hover:bg-green-700'
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-green-600 hover:bg-green-700"
             }`}
             disabled={loading}
           >
@@ -148,7 +144,7 @@ const CourseAddModal = ({ isOpen, onClose, onAddCourse }) => {
                 <span>Yükleniyor...</span>
               </div>
             ) : (
-              'Ekle'
+              "Ekle"
             )}
           </button>
         </div>

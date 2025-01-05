@@ -18,6 +18,7 @@ import TabButton from "../../components/TabButton";
 import VideoWindow from "../../components/VideoWindow";
 import VideoTitle from "../../components/VideoTitle";
 import VideoUploadModal from "../../components/VideoUploadModal";
+import { FaPlay } from "react-icons/fa";
 
 const EditCoursePage = () => {
   const { id } = useParams();
@@ -293,6 +294,7 @@ const EditCoursePage = () => {
               onClick={() => setActiveTab(1)}
             />
             <TabButton
+              icon={<FaPlay />}
               label="Videolar"
               isActive={activeTab === 2}
               onClick={() => setActiveTab(2)}

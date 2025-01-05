@@ -48,6 +48,35 @@ const TeacherDashboard = () => {
     }
   };
 
+  const [orders, setOrders] = useState([]);
+  const [loadingOrders, setLoadingOrders] = useState(false);
+  const [errorOrders, setErrorOrders] = useState("");
+
+  const getOrders = async () => {
+    setLoadingOrders(true);
+    setErrorOrders("");
+
+    try {
+      const response = await axios.get("/Orders/teacher", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setOrders(response.data);
+    } catch (err) {
+      setErrorOrders(err.response?.data?.message || "Siparişler yüklenemedi.");
+      addSnackbar("Siparişler yüklenirken bir hata oluştu", "error");
+    } finally {
+      setLoadingOrders(false);
+    }
+  };
+
+  useEffect(() => {
+    if (activeTab === 2) {
+      getOrders();
+    }
+  }, [activeTab]);
+
   useEffect(() => {
     getMyCourses();
   }, []);
@@ -122,7 +151,7 @@ const TeacherDashboard = () => {
           />
 
           <TabButton
-            label="Kazançlarım"
+            label="Kurs Siparişleri"
             isActive={activeTab === 2}
             onClick={() => setActiveTab(2)}
           />
@@ -144,7 +173,7 @@ const TeacherDashboard = () => {
               </div>
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="text-gray-600 uppercase text-sm leading-normal bg-gray-100">
+                  <tr className="text-gray-600 uppercase text-sm bg-gray-100">
                     <th className="py-3 px-6">Kapak Resmi</th>
                     <th className="py-3 px-6">Kurs Adı</th>
                     <th className="py-3 px-6">Açıklama</th>
@@ -158,7 +187,7 @@ const TeacherDashboard = () => {
                       key={course.id}
                       className="border-b border-gray-200 hover:bg-gray-50"
                     >
-                      <td className="py-3 px-6">
+                      <td className="py-3">
                         <img
                           src={API_URL + course.coverImage}
                           alt={course.title}
@@ -213,11 +242,59 @@ const TeacherDashboard = () => {
             />
           </div>
         ) : (
-          <div className="bg-white rounded-lg shadow-md p-6 text-center text-gray-500">
-            <h2 className="text-xl font-medium">Bu sekme henüz boş!</h2>
-            <p className="mt-2">
-              Buraya içerik eklemek için daha fazla geliştirme yapabilirsiniz.
-            </p>
+          <div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+                Kurs Siparişleri
+              </h2>
+              {loadingOrders ? (
+                <p>Yükleniyor...</p>
+              ) : errorOrders ? (
+                <p className="text-red-500">{errorOrders}</p>
+              ) : orders.length === 0 ? (
+                <p>Hiç sipariş bulunamadı.</p>
+              ) : (
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="text-gray-600 uppercase text-sm bg-gray-100">
+                      <th className="py-3 px-6">Kapak Resmi</th>
+                      <th className="py-3 px-6">Kurs Adı</th>
+                      <th className="py-3 px-6">Açıklama</th>
+                      <th className="py-3 px-6">Fiyat</th>
+                      <th className="py-3 px-6">Ödeme Durumu</th>
+                      <th className="py-3 px-6">Sipariş Tarihi</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-700 text-sm font-light">
+                    {orders.map((order) => (
+                      <tr
+                        key={order.id}
+                        className="border-b border-gray-200 hover:bg-gray-50"
+                      >
+                        <td className="py-3">
+                          <img
+                            src={API_URL + order.courseCoverImage}
+                            alt={order.courseTitle}
+                            className="w-60 h-30 object-cover rounded-lg"
+                          />
+                        </td>
+                        <td className="py-3 px-6 font-semibold">
+                          {order.courseTitle}
+                        </td>
+                        <td className="py-3 px-6">
+                          {order.courseDescription.substring(0, 50)}...
+                        </td>
+                        <td className="py-3 px-6">{order.price} TL</td>
+                        <td className="py-3 px-6">{order.paymentStatus}</td>
+                        <td className="py-3 px-6">
+                          {new Date(order.orderDate).toLocaleDateString()}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
           </div>
         )}
       </div>
