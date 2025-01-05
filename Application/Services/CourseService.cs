@@ -1,8 +1,8 @@
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using Infrastructure.Data; // Doğru namespace
+using Infrastructure.Data; 
 using Microsoft.EntityFrameworkCore;
-using Core.Entities; // Varlıklar
+using Core.Entities;
 
 public class CourseService
 {
@@ -13,6 +13,15 @@ public class CourseService
         _context = context;
     }
 
+    public async Task<List<CourseAnonymousDto>> GetCoursesAsync()
+    {
+        var courses = await _context.Courses
+            .Include(c => c.Videos).Include(c => c.Teacher)
+            .ToListAsync();
+
+        return courses.Select(CourseAnonymousDto.FromCourse).ToList();
+    }
+    
     public async Task<List<CourseDto>> GetTeacherCoursesAsync(string teacherId)
     {
         var courses = await _context.Courses
@@ -28,6 +37,13 @@ public class CourseService
         return await _context.Courses
             .Include(c => c.Videos)
             .FirstOrDefaultAsync(c => c.Id == id && c.TeacherId == teacherId);
+    }
+
+    public async Task<Course> GetCourseAsync(int id)
+    {
+        return await _context.Courses
+            .Include(c => c.Videos)
+            .FirstOrDefaultAsync(c => c.Id == id);
     }
 
     public async Task<Course> CreateCourseAsync(Course course)

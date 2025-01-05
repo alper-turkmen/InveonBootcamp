@@ -18,6 +18,24 @@ public class VideoDto
     }
 } 
 
+public class VideoAnonymousDto
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    public int IndexInCourse { get; set; }
+
+    public static VideoAnonymousDto FromVideo(Video video)
+    {
+        return new VideoAnonymousDto
+        {
+            Id = video.Id,
+            Title = video.Title,
+            IndexInCourse = video.IndexInCourse
+        };
+    }
+} 
+
 public class VideoUploadDto
 {
     public string Title { get; set; }

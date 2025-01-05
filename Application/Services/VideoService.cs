@@ -35,9 +35,8 @@ public async Task UpdateVideoAsync(Video video, VideoDto videoDto)
 {
     video.Title = videoDto.Title ?? video.Title; 
     video.Url = videoDto.Url ?? video.Url;   
-    video.IndexInCourse = videoDto.IndexInCourse != 0 
-                          ? videoDto.IndexInCourse 
-                          : video.IndexInCourse; 
+    video.IndexInCourse = videoDto.IndexInCourse;
+                          
 
     await _context.SaveChangesAsync();
 }

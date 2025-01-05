@@ -38,6 +38,8 @@ builder.Services.AddScoped<CourseService>();
 
 builder.Services.AddScoped<VideoService>();
 
+builder.Services.AddScoped<OrderService>();
+
 
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
@@ -74,12 +76,13 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
-     
+   
+    c.EnableAnnotations();
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
-        Description = "Please enter a valid token",
+        Description = "Token giriniz. Başında 'Bearer' olmasına gerek yoktur.",
         Name = "Authorization",
         Type = SecuritySchemeType.Http,
         BearerFormat = "JWT",
@@ -106,13 +109,13 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
-    options.SuppressModelStateInvalidFilter = true; // Varsayılan model doğrulamasını devre dışı bırak
+    options.SuppressModelStateInvalidFilter = true; 
 });
 
 var app = builder.Build();
 
 app.UseRouting();
-app.UseCors("AllowAll"); // CORS middleware'ini ekleyin
+app.UseCors("AllowAll"); 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {

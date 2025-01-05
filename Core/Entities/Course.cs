@@ -9,4 +9,5 @@ public class Course
     public string TeacherId { get; set; } 
     public User Teacher { get; set; }
     public List<Video> Videos { get; set; }
+    public List<Order> Orders { get; set; } 
 } 

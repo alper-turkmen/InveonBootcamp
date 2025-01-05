@@ -20,12 +20,44 @@ public class CourseController : ControllerBase
 
     private string GetUserId() => User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
+[HttpGet("all")]
+[AllowAnonymous]
+public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
+    [FromQuery] string? name = null,
+    [FromQuery] int page = 1,   
+    [FromQuery] int size = 10) 
+{
+    var courses = await _courseService.GetCoursesAsync();
+
+    if (!string.IsNullOrWhiteSpace(name))
+    {
+        courses = courses.Where(c => c.Title.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
+    }
+
+    var totalCount = courses.Count;
+
+    var pagedCourses = courses
+        .Skip((page - 1) * size) 
+        .Take(size)        
+        .ToList();
+
+    return Ok(new
+    {
+        TotalCount = totalCount, 
+        Page = page,       
+        Size = size,          
+        TotalPages = (int)Math.Ceiling(totalCount / (double)size),
+        Data = pagedCourses   
+    });
+}
+
     [HttpGet]
     public async Task<ActionResult<List<CourseDto>>> GetTeacherCourses()
     {
         var courses = await _courseService.GetTeacherCoursesAsync(GetUserId());
         return Ok(courses);
     }
+
 
     [HttpGet("{id}")]
     public async Task<ActionResult<CourseDto>> GetCourse(int id)

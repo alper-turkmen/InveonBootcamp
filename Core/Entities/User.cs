@@ -4,11 +4,13 @@ namespace Core.Entities
 {
     public class User : IdentityUser
     {
-        public string Name { get; set; } // Ek alan
-        public string Surname { get; set; } // Ek alan
+        public string Name { get; set; } 
+        public string Surname { get; set; }
 
-        public string About { get; set; } // Ek alan
+        public string About { get; set; }
 
-        public string ProfilePicture { get; set; } // Ek alan
+        public string ProfilePicture { get; set; } 
+
+        public List<Order> Orders { get; set; } 
     }
 }
