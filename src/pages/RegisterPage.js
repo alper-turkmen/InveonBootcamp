@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import InputField from '../components/InputField';
-import Button from '../components/Button';
-import ErrorMessage from '../components/ErrorMessage';
-import axios from '../utils/axiosconf';
-import { useSnackbar } from '../contexts/AlertContext';
-import { useAuth } from '../contexts/AuthContext';
-import { SITE_NAME } from '../consts/consts';
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import InputField from "../components/InputField";
+import Button from "../components/Button";
+import ErrorMessage from "../components/ErrorMessage";
+import axios from "../utils/axiosconf";
+import { useSnackbar } from "../contexts/AlertContext";
+import { useAuth } from "../contexts/AuthContext";
+import { SITE_NAME } from "../consts/consts";
 
 const RegisterPage = () => {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  
-  const [error, setError] = useState('');
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+
+  const [error, setError] = useState("");
   const { addSnackbar } = useSnackbar();
 
   const { user, token, login, logout } = useAuth();
@@ -27,39 +25,37 @@ const RegisterPage = () => {
 
   const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
-      e.preventDefault();
-  
-      setLoading(true);
-      setError('');
-  
-      try {
-        const response = await axios.post('/Auth/register', {
-          username: email,
-          email: email,
-          password: password,
-          name: name,
-          surname: surname
-        });
-  
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-        addSnackbar(SITE_NAME + '\'ye hoşgeldiniz. Yönlendiriliyorsunuz...', 'success');
+    setLoading(true);
+    setError("");
 
+    try {
+      const response = await axios.post("/Auth/register", {
+        username: email,
+        email: email,
+        password: password,
+        name: name,
+        surname: surname,
+      });
 
-        setTimeout(() => {
-          navigate('/login');
-        }, 3000);
+      addSnackbar(
+        SITE_NAME + "'ye hoşgeldiniz. Yönlendiriliyorsunuz...",
+        "success"
+      );
 
-  
-      } catch (err) {
-        setError(err.response.data.message);
-        
-        addSnackbar('Kayıt olma işlemi başarısız', 'error');
+      setTimeout(() => {
+        navigate("/login");
+      }, 3000);
+    } catch (err) {
+      setError(err.response.data.message);
 
-      } finally {
-        setLoading(false);
-      }
-    };
+      addSnackbar("Kayıt olma işlemi başarısız", "error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -73,7 +69,6 @@ const RegisterPage = () => {
           <ErrorMessage message={error} />
 
           <div className="rounded-md shadow-sm -space-y-px">
-
             <InputField
               id="name"
               type="text"
@@ -82,7 +77,7 @@ const RegisterPage = () => {
               onChange={(e) => setName(e.target.value)}
               rounded="md"
             />
-<br/>
+            <br />
             <InputField
               id="surname"
               type="text"
@@ -91,7 +86,7 @@ const RegisterPage = () => {
               onChange={(e) => setSurname(e.target.value)}
               rounded="md"
             />
-<br/>
+            <br />
 
             <InputField
               id="email"
@@ -101,7 +96,7 @@ const RegisterPage = () => {
               onChange={(e) => setEmail(e.target.value)}
               rounded="md"
             />
-<br/>
+            <br />
 
             <InputField
               id="password"
@@ -113,13 +108,15 @@ const RegisterPage = () => {
               setObsecure={() => setShowPassword(!showPassword)}
               rounded="md"
             />
-
           </div>
 
-          <Button type="submit" text="Giriş Yap" />
+          <Button type="submit" text="Kayıt Ol" loading={loading} />
 
           <div className="text-sm text-center">
-            <Link to="/login" className="font-medium text-purple-600 hover:text-purple-500">
+            <Link
+              to="/login"
+              className="font-medium text-purple-600 hover:text-purple-500"
+            >
               Hesabınız var mı? Giriş yapın
             </Link>
           </div>

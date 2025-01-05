@@ -252,6 +252,12 @@ const EditCoursePage = () => {
     try {
       setLoading(true);
 
+      if (!course.title || !course.description || !course.price) {
+        addSnackbar("Lütfen tüm alanları doldurun.", "error");
+        setLoading(false);
+        return;
+      }
+
       const data = {
         title: course.title,
         description: course.description,

@@ -41,8 +41,23 @@ export const AuthProvider = ({ children }) => {
     navigate("/");
   };
 
-  const updateProfile = (name, surname, about) => {
-    setUser({ ...user, firstName: name, lastName: surname, about: about });
+  const updateProfile = (name, surname, about, profilePicture) => {
+    setUser({
+      ...user,
+      firstName: name,
+      lastName: surname,
+      about: about,
+      profilePicture: profilePicture,
+    });
+
+    const updatedUser = {
+      ...user,
+      firstName: name,
+      lastName: surname,
+      about: about,
+      profilePicture: profilePicture,
+    };
+    localStorage.setItem("user", JSON.stringify(updatedUser));
   };
 
   return (

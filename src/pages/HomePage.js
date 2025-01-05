@@ -28,7 +28,7 @@ const HomePage = () => {
     const fetchPopularCourses = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("/Course/all?size=10&page=1");
+        const response = await axios.get("/Course/all?size=20&page=1");
         setPopularCourses(response.data.data);
       } catch (err) {
         setError("Popüler kurslar yüklenirken bir hata oluştu.");
@@ -40,8 +40,11 @@ const HomePage = () => {
   }, []);
 
   const handleSearch = async () => {
+    if (searchPerformed && !searchTerm.trim()) {
+      setSearchPerformed(false);
+      return;
+    }
     if (!searchTerm.trim()) {
-      setError("Lütfen bir arama terimi girin.");
       return;
     }
 
