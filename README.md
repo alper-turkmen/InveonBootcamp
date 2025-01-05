@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# InveonBootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bitirme Ödevi
 
-## Available Scripts
+# AçıkAkademi: Online Kurs Satış Projesi
 
-In the project directory, you can run:
+## Proje acikakademi.alperturkmen.com adresinde Docker ile canlıya alınmıştır.
 
-### `npm start`
+### Nginx ayarlarıyla ilgili olmakla birlikte, canlıda büyük videoların uploadına izin vermemektedir. Çözümünü araştırmaktayım. Local'de bir sorun yoktur.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bu repo, Inveon Bootcamp kapsamında yapılan bitirme ödevi için oluşturulmuştur.
+Bu ödevde, bir kurs satış sitesi yapılmıştır.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Sayfanın en alt kısmında uygulamanın görselleri bulunmaktadır.
 
-### `npm test`
+# Özellikler
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Öğretmen ve öğrenci rolü bulunmaktadır.
+- Öğretmenler kurs oluşturabilir, kurslarının içeriğini düzenleyebilir.
+- **Kurslara video ekleyebilir, videoyu düzenleyebilir, silebilir.**
+- **Kursların kapak fotoğrafı yüklenebilir**
+- Başlık, açıklama, fiyat bilgileri bulunmaktadır.
+- **Kurslardaki videoların öğrencide görünecek sıralamasını sürükleyip bırakarak değiştirebilir.**
+- Öğretmenler kurslarına gelen siparişleri görebilir.
+- Öğrenciler kursları satın alabilir.
+- **Sepete ekleme ve çıkarma işlemleri yapılabilir. Sepet localstorage'da korunur**
+- Satın alınan kurslar öğrencinin profilinde görünmektedir.
+- **Öğrenciler kursları satın aldıktan sonra kurs içeriğine erişebilir.**
+- **Öğrenciler kursları izleyebilir.**
+- **Satın alınan kursları öğrenci tekrar satın alamaz.**
+- **Kursları arama özelliği bulunmaktadır.**
+- Kullanıcılar **profil fotoğraflarını güncelleyebilir**
+- Kullanıcılar hakkında bilgilerini güncelleyebilir.
+- Varsayılan olarak backend'de bazı hazır veriler gelmektedir. Bunlar güncellenebilir.
+- Giriş Bilgileri:
 
-### `npm run build`
+  - Öğretmen :
+    - mehmetdemir@akademi.com
+    - ayseyilmaz@akademi.com
+    - Şifreleri: Ogretmen123!
+  - Öğrenci:
+    - alicelik@akademi.com
+    - elifkaya@akademi.com
+    - Şifreleri: Ogrenci123!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Backend Kurulumu
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- API/appsettings.json içinde PostgreSQL veritabanı bağlantı bilgileri gerekmektedir
+- dotnet ef database update --project Infrastructure --startup-project API
+  komutu ile veritabanı güncellenmelidir
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Görseller
 
-### `npm run eject`
+# Öğrenci Anasayfası
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![title](EkranGoruntuleri/1.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Kullanıcı Profili
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![title](EkranGoruntuleri/2.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Sepet
 
-## Learn More
+![title](EkranGoruntuleri/3.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Sepetteki Kursları Satın Alma
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![title](EkranGoruntuleri/4.png)
 
-### Code Splitting
+# Satın Alma İşlemi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![title](EkranGoruntuleri/5.png)
 
-### Analyzing the Bundle Size
+# Satın Aldığım Kurslar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![title](EkranGoruntuleri/6.png)
 
-### Making a Progressive Web App
+# Kurs Videoları İzleme Ekranı
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![title](EkranGoruntuleri/8.png)
 
-### Advanced Configuration
+# Eğitmen Profil Ekranı
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![title](EkranGoruntuleri/9.png)
 
-### Deployment
+# Eğitmen Kurs Düzenleme Ekranı
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![title](EkranGoruntuleri/10.png)
 
-### `npm run build` fails to minify
+# Eğitmenin Kursları
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![title](EkranGoruntuleri/11.png)
+
+# Sürükle Bırak ile Video Sırası Değiştirme
+
+![title](EkranGoruntuleri/12.png)
+
+# Eğitmen Video Önizleme
+
+![title](EkranGoruntuleri/13.png)
+
+# Video Ekleme
+
+![title](EkranGoruntuleri/14.png)
+
+# Kurs Ekleme
+
+![title](EkranGoruntuleri/15.png)
+
+# Eğitmenin Kurslarına Gelen Siparişler
+
+![title](EkranGoruntuleri/16.png)
+
+# Kurs Arama
+
+![title](EkranGoruntuleri/17.png)
+
+# Kurs Detay
+
+![title](EkranGoruntuleri/18.png)
