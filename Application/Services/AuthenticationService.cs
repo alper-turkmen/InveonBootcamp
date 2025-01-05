@@ -64,7 +64,9 @@ public class AuthenticationService
             Email = registerDto.Email,
             EmailConfirmed = true,
             Name = registerDto.Name,
-            Surname = registerDto.Surname
+            Surname = registerDto.Surname,
+            About = "",
+            ProfilePicture = "/files/profiles/default-profile.jpg"
         };
 
         var result = await _userManager.CreateAsync(user, registerDto.Password);
