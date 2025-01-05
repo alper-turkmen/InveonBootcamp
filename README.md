@@ -11,7 +11,8 @@ Bu ödevde, bir kurs satış sitesi yapılmıştır.
 
 #### Bilinen Kısıtlamalar
 
-- Hosting servisi kaynaklı olarak büyük dosyaların yüklenmesinde limitasyonlar bulunmaktadır. Lokal geliştirme ortamında bu kısıtlama bulunmamaktadır.
+- Hosting servisi/Nginx web sunucusu ayarları kaynaklı olarak büyük dosyaların yüklenmesinde limitasyonlar bulunmaktadır. Lokal geliştirme ortamında bu kısıtlama bulunmamaktadır.
+- Not: Dosya boyutu limitasyonu için çözümler üzerinde çalışılmaktadır.
 
 Sayfanın en alt kısmında uygulamanın görselleri bulunmaktadır.
 
@@ -45,11 +46,17 @@ Sayfanın en alt kısmında uygulamanın görselleri bulunmaktadır.
     - elifkaya@akademi.com
     - Şifreleri: Ogrenci123!
 
-#### Backend Kurulumu
+#### Back-End Kurulumu
 
 - API/appsettings.json içinde PostgreSQL veritabanı bağlantı bilgileri gerekmektedir
 - dotnet ef database update --project Infrastructure --startup-project API
   komutu ile veritabanı güncellenmelidir
+
+#### Front-End Kurulumu
+
+- npm install komutu ile gerekli paketler yüklenmelidir
+- src/consts/consts.js dosyasında API_URL değişkeni, back-end adresine göre güncellenmelidir. Projede .NET Core Back-End HTTP portu 5243 olarak ayarlanmıştır.
+- npm start komutu ile projeyi başlatabilirsiniz
 
 # Görseller
 
