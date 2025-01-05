@@ -17,3 +17,10 @@ public class VideoDto
         };
     }
 } 
+
+public class VideoUploadDto
+{
+    public string Title { get; set; }
+    public string File { get; set; }
+    public string FileName { get; set; }
+}

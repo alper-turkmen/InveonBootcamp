@@ -8,8 +8,20 @@ using Core.Entities;
 using Microsoft.OpenApi.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin() 
+              .AllowAnyMethod() 
+              .AllowAnyHeader();
+    });
+});
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -25,6 +37,7 @@ builder.Services.AddScoped<ProfileService>();
 builder.Services.AddScoped<CourseService>();
 
 builder.Services.AddScoped<VideoService>();
+
 
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
@@ -61,6 +74,8 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
+     
+
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -89,11 +104,15 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true; // Varsayılan model doğrulamasını devre dışı bırak
+});
+
 var app = builder.Build();
 
 app.UseRouting();
-app.UseHttpsRedirection();
-
+app.UseCors("AllowAll"); // CORS middleware'ini ekleyin
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
@@ -104,6 +123,7 @@ app.UseSwaggerUI(c =>
 app.UseAuthentication(); 
 app.UseAuthorization();  
 app.MapControllers();
+app.UseStaticFiles();
 
 var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;

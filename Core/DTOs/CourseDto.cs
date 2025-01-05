@@ -16,7 +16,7 @@ public class CourseDto
             Description = course.Description,
             CoverImage = course.CoverImage,
             Price = course.Price,
-            Videos = course.Videos.Select(VideoDto.FromVideo).ToList()
+            Videos = course.Videos.Select(VideoDto.FromVideo).OrderBy(v => v.IndexInCourse).ToList()
         };
     }
 } 
@@ -24,29 +24,25 @@ public class CourseDto
 
 public class CourseUpdateDto
 {
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string CoverImage { get; set; }
-    public decimal Price { get; set; }
+    public string Title { get; set; } // Opsiyonel
+    public string Description { get; set; } // Opsiyonel
 
-    public static CourseUpdateDto FromCourse(Course course)
-    {
-        return new CourseUpdateDto
-        {
-            Title = course.Title,
-            Description = course.Description,
-            CoverImage = course.CoverImage,
-            Price = course.Price
-        };
-    }
-} 
+    
+    public decimal Price { get; set; } // Opsiyonel
+}
 
+public class CoursePhotoDto
+{
+    public string? CoverImage { get; set; } // Opsiyonel
+    public string? CoverImageName { get; set; } // Opsiyonel
+}
 
 public class CourseCreateDto
 {
     public string Title { get; set; }
     public string Description { get; set; }
     public string CoverImage { get; set; }
+    public string CoverImageName { get; set; }
     public decimal Price { get; set; }
     public List<VideoDto> Videos { get; set; }
 

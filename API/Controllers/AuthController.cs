@@ -17,8 +17,8 @@ public class AuthController : ControllerBase
     {
         try
         {
-            var token = await _authService.LoginAsync(loginDto);
-            return Ok(new { token });
+            var result = await _authService.LoginAsync(loginDto);
+            return Ok(result);
         }
         catch (UnauthorizedAccessException)
         {

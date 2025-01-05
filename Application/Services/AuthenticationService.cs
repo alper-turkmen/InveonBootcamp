@@ -21,7 +21,7 @@ public class AuthenticationService
         _configuration = configuration;
     }
 
-    public async Task<string> LoginAsync(LoginDto loginDto)
+    public async Task<LoginResponseDto> LoginAsync(LoginDto loginDto)
     {
         var user = await _userManager.FindByEmailAsync(loginDto.Email);
         if (user == null || !(await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false)).Succeeded)
@@ -29,7 +29,25 @@ public class AuthenticationService
             throw new UnauthorizedAccessException("Invalid login attempt.");
         }
 
-        return await GenerateJwtToken(user);
+
+    var token = await GenerateJwtToken(user);
+
+    return new LoginResponseDto
+    {
+        Token = token,
+        User = new UserDto
+        {
+            Id = user.Id,
+            Email = user.Email,
+            FirstName = user.Name,
+            LastName = user.Surname,
+            About = user.About,
+            ProfilePicture = user.ProfilePicture,
+            Roles = await _userManager.GetRolesAsync(user)
+        }
+    };
+
+
     }
 
     public async Task<string> RegisterAsync(RegisterDto registerDto)

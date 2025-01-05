@@ -10,4 +10,13 @@ using System.ComponentModel.DataAnnotations;
         [Required]
         [MaxLength(50)]
         public string Surname { get; set; }
+
+        [MaxLength(500)]
+        public string About { get; set; }
+    }
+
+    public class UpdateProfilePictureDto
+    {
+        [Required]
+        public string ProfilePicture { get; set; }
     }

@@ -31,13 +31,16 @@ public class VideoService
             .FirstOrDefaultAsync(v => v.Id == videoId && v.CourseId == courseId);
     }
 
-    public async Task UpdateVideoAsync(Video video, VideoDto videoDto)
-    {
-        video.Title = videoDto.Title;
-        video.Url = videoDto.Url;
+public async Task UpdateVideoAsync(Video video, VideoDto videoDto)
+{
+    video.Title = videoDto.Title ?? video.Title; 
+    video.Url = videoDto.Url ?? video.Url;   
+    video.IndexInCourse = videoDto.IndexInCourse != 0 
+                          ? videoDto.IndexInCourse 
+                          : video.IndexInCourse; 
 
-        await _context.SaveChangesAsync();
-    }
+    await _context.SaveChangesAsync();
+}
 
     public async Task DeleteVideoAsync(Video video)
     {
@@ -51,4 +54,35 @@ public class VideoService
             .Include(c => c.Videos)
             .FirstOrDefaultAsync(c => c.Id == courseId && c.TeacherId == teacherId);
     }
+
+
+    public async Task<int> GetLastVideoIndexAsync(int courseId)
+{
+    var videos = await _context.Videos
+                               .Where(v => v.CourseId == courseId)
+                               .OrderByDescending(v => v.IndexInCourse)
+                               .FirstOrDefaultAsync();
+
+    return videos?.IndexInCourse ?? 0;
+}
+
+public async Task AddVideoAsync(Video video)
+{
+    _context.Videos.Add(video);
+    await _context.SaveChangesAsync();
+}
+
+    public async Task<string> SaveVideoFileAsync(string base64File)
+    {
+        var fileBytes = Convert.FromBase64String(base64File);
+
+        var fileName = $"{Guid.NewGuid()}.mp4";
+
+        var filePath = Path.Combine("wwwroot/coursevideo", fileName);
+
+        await System.IO.File.WriteAllBytesAsync(filePath, fileBytes);
+
+        return $"/coursevideo/{fileName}";
+    }
+
 }
