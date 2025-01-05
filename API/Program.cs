@@ -9,8 +9,16 @@ using Microsoft.OpenApi.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<KestrelServerOptions>(options =>
+{
+    options.Limits.MaxRequestBodySize = 100 * 1024 * 1024; 
+    options.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(5); 
+});
+
 
 builder.Services.AddCors(options =>
 {
