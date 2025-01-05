@@ -30,7 +30,7 @@ public class CourseAnonymousDto
     public string Description { get; set; }
     public string CoverImage { get; set; }
     public decimal Price { get; set; }
-    public List<VideoAnonymousDto> Videos { get; set; } = new(); // Varsayılan boş liste
+    public List<VideoAnonymousDto> Videos { get; set; } = new(); 
     public String Teacher { get; set; }
 
     public static CourseAnonymousDto FromCourse(Course course)

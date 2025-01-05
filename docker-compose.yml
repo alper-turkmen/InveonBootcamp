@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  kursapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5002:8080"
+      - "5003:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+    volumes:
+      - ./API/wwwroot:/app/wwwroot
+      - ./logs:/app/logs
