@@ -4,12 +4,14 @@
 
 # AçıkAkademi: Online Kurs Satış Projesi
 
-## Proje acikakademi.alperturkmen.com adresinde Docker ile canlıya alınmıştır.
-
-### Nginx ayarlarıyla ilgili olmakla birlikte, canlıda büyük videoların uploadına izin vermemektedir. Çözümünü araştırmaktayım. Local'de bir sorun yoktur.
-
 Bu repo, Inveon Bootcamp kapsamında yapılan bitirme ödevi için oluşturulmuştur.
 Bu ödevde, bir kurs satış sitesi yapılmıştır.
+
+## Proje acikakademi.alperturkmen.com adresinde Docker ile canlıya alınmıştır. Docker ve Nginx dosyaları da bu repoda bulunmaktadır.
+
+#### Bilinen Kısıtlamalar
+
+- Hosting servisi kaynaklı olarak büyük dosyaların yüklenmesinde limitasyonlar bulunmaktadır. Lokal geliştirme ortamında bu kısıtlama bulunmamaktadır.
 
 Sayfanın en alt kısmında uygulamanın görselleri bulunmaktadır.
 
