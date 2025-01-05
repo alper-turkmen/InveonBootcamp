@@ -24,6 +24,7 @@ import TeacherDashboard from "./pages/TeacherPages/TeacherDashboard";
 import EditCoursePage from "./pages/TeacherPages/EditCoursePage";
 import UserDashboard from "./pages/UserPages/UserDashboard";
 import UserCart from "./pages/UserPages/UserCart";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
               <Route path="/edit-course/:id" element={<EditCoursePage />} />
               <Route path="/user-dashboard" element={<UserDashboard />} />
               <Route path="/cart" element={<UserCart />} />
+              <Route path="/about" element={<AboutUs />} />
             </Routes>
             <Footer />
           </CartProvider>

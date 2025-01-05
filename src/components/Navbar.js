@@ -9,28 +9,12 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const { cart, cartSize } = useCart();
 
-  const categories = [
-    "Yazılım Geliştirme",
-    "Veri Bilimi",
-    "Tasarım",
-    "Pazarlama",
-    "İş Yönetimi",
-  ];
+  const categories = [];
 
-  return (
-    <nav className="bg-white shadow-md">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-6">
-          <Link
-            to="/"
-            className="text-2xl font-bold text-purple-600 
-          bg-clip-text text-transparent bg-gradient-to-b from-purple-400 to-purple-900"
-          >
-            {SITE_NAME}
-          </Link>
-
-          <div className="hidden md:flex space-x-6">
-            <div className="relative group">
+  {
+    /*
+    
+    <div className="relative group">
               <a href="#" className="text-gray-700 hover:text-purple-600">
                 Kategoriler
               </a>
@@ -54,6 +38,21 @@ const Navbar = () => {
             <Link to="/courses" className="text-gray-700 hover:text-purple-600">
               Popüler Kurslar
             </Link>
+    */
+  }
+  return (
+    <nav className="bg-white shadow-md">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="flex items-center space-x-6">
+          <Link
+            to="/"
+            className="text-2xl font-bold text-purple-600 
+          bg-clip-text text-transparent bg-gradient-to-b from-purple-400 to-purple-900"
+          >
+            {SITE_NAME}
+          </Link>
+
+          <div className="hidden md:flex space-x-6">
             <Link to="/about" className="text-gray-700 hover:text-purple-600">
               Hakkımızda
             </Link>

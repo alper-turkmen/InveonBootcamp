@@ -7,6 +7,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import kepIcon from "../kep.png";
+import alarmIcon from "../alarm.png";
+import kupaIcon from "../kupa.png";
+import CourseModal from "../components/CourseModal";
 
 const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,6 +19,8 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [searchPerformed, setSearchPerformed] = useState(false);
+
+  const [selectedCourse, setSelectedCourse] = useState(null);
 
   const sliderRef = useRef();
 
@@ -109,19 +115,19 @@ const HomePage = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
-              icon="🎓"
+              icon={kepIcon}
               title="Kaliteli Eğitim"
-              description="Uzman eğitmenlerden kaliteli içeriklerle öğren"
+              description="Uzman eğitmenler tarafından hazırlanan kaliteli içerikler"
             />
             <FeatureCard
-              icon="🏆"
+              icon={kupaIcon}
               title="Sertifikalar"
-              description="Başarıyla tamamladığın her kurs için sertifika al"
+              description="Tamamladığınız kurslar için sertifika alma imkanı"
             />
             <FeatureCard
-              icon="⏰"
+              icon={alarmIcon}
               title="Esnek Program"
-              description="Her zaman ve her yerde öğrenme fırsatı"
+              description="İstediğiniz zaman, istediğiniz yerde öğrenme imkanı"
             />
           </div>
         </div>
@@ -152,6 +158,8 @@ const HomePage = () => {
                       title={course.title}
                       description={course.description}
                       teacher={course.teacher}
+                      videos={course.videos}
+                      onDetailClick={() => setSelectedCourse(course)}
                     />
                   ))}
                 </Slider>
@@ -187,12 +195,20 @@ const HomePage = () => {
                     title={course.title}
                     description={course.description}
                     teacher={course.teacher}
+                    videos={course.videos}
+                    onDetailClick={() => setSelectedCourse(course)}
                   />
                 ))}
               </div>
             )}
           </div>
         </section>
+      )}
+      {selectedCourse && (
+        <CourseModal
+          course={selectedCourse}
+          onClose={() => setSelectedCourse(null)}
+        />
       )}
     </div>
   );

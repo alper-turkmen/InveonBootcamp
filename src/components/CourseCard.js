@@ -1,18 +1,26 @@
 import React from "react";
-import { useCart } from "../contexts/CartContext";
 import { FaCartShopping } from "react-icons/fa6";
+import { useCart } from "../contexts/CartContext";
 import { useAuth } from "../contexts/AuthContext";
 
-const CourseCard = ({ id, coverImage, title, description, teacher, price }) => {
+const CourseCard = ({
+  id,
+  coverImage,
+  title,
+  description,
+  teacher,
+  price,
+  onDetailClick,
+}) => {
   const { addToCart } = useCart();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   const handleAddToCart = () => {
     addToCart({ id, title, price, teacher, coverImage });
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg mx-5 shadow-lg p-6">
       <div className="relative">
         <img src={coverImage} alt={title} className="rounded-lg mb-4 w-full" />
         {user && user.roles.includes("User") && (
@@ -30,7 +38,10 @@ const CourseCard = ({ id, coverImage, title, description, teacher, price }) => {
       <p className="text-gray-600 mt-2">Eğitmen: {teacher}</p>
       <p className="text-gray-800 font-semibold mt-2">{price} TL</p>
       <div className="mt-4">
-        <button className="w-full bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-700">
+        <button
+          onClick={onDetailClick}
+          className="w-full bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-700"
+        >
           Detayları Gör
         </button>
       </div>
