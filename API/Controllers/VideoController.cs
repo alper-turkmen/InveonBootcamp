@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Core.Entities;
 using System.Security.Claims;
+using Swashbuckle.AspNetCore.Annotations;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -21,6 +22,7 @@ public class VideoController : ControllerBase
 
 [RequestSizeLimit(500 * 1024 * 1024)]
 [HttpPost("{courseId}/videos")]
+[SwaggerOperation(Summary = "Kursa video upload eder. Öğretmene özeldir. base64 formatında kabul eder. Dosyayı /files/coursevideo klasörüne kaydeder.")]
 public async Task<ActionResult<VideoDto>> AddVideo(int courseId, [FromBody] VideoUploadDto videoUploadDto)
 {
     var userId = GetUserId();
@@ -63,6 +65,7 @@ public async Task<ActionResult<VideoDto>> AddVideo(int courseId, [FromBody] Vide
 }
 
     [HttpDelete("{courseId}/videos/{videoId}")]
+    [SwaggerOperation(Summary = "Kurstan video siler. Öğretmene özeldir.")]
     public async Task<ActionResult> DeleteVideo(int courseId, int videoId)
     {
         var userId = GetUserId();
@@ -77,6 +80,7 @@ public async Task<ActionResult<VideoDto>> AddVideo(int courseId, [FromBody] Vide
     }
 
     [HttpPut("{courseId}/videos/{videoId}")]
+    [SwaggerOperation(Summary = "Videonun görüntüleneceği sırayı vb. bilgileri günceller.")]
     public async Task<ActionResult<VideoDto>> UpdateVideo(int courseId, int videoId, [FromBody] VideoDto videoDto)
     {
         var userId = GetUserId();

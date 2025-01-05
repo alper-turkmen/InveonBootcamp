@@ -20,7 +20,7 @@ public class OrdersController : ControllerBase
 
     [HttpGet]
     [SwaggerOperation(
-    Summary = "Kullanicinin siparislerini getirir."
+    Summary = "Kullanıcının siparişlerini getirir."
     )]
     public async Task<ActionResult<List<OrderDto>>> GetUserOrders()
     {
@@ -36,7 +36,7 @@ public class OrdersController : ControllerBase
 
     [HttpGet("{id}")]
     [SwaggerOperation(
-        Summary = "Siparis id'sine göre siparis getirir."
+        Summary = "Sipariş id'sine göre sipariş getirir."
     )]
     public async Task<ActionResult<OrderDto>> GetOrderById(int id)
     {
@@ -52,7 +52,7 @@ public class OrdersController : ControllerBase
 
     [HttpGet("{id}/coursedetails")]
     [SwaggerOperation(
-        Summary = "Siparis id'sine göre kurs detaylarını getirir."
+        Summary = "Sipariş id'sine göre kurs detaylarını getirir."
     )]
     public async Task<ActionResult<CourseDto>> GetOrderedCourse(int id)
     {
@@ -68,8 +68,9 @@ public class OrdersController : ControllerBase
 
 
     [HttpGet("teacher")]
+    [Authorize(Roles = "Teacher")]
     [SwaggerOperation(
-        Summary = "Öğretmenin siparislerini getirir."
+        Summary = "Amacı öğretmenin kendi kurslarının siparişlerini görmesidir."
     )]
     public async Task<ActionResult<List<OrderDto>>> GetTeacherOrders()
     {
@@ -85,7 +86,7 @@ public class OrdersController : ControllerBase
 
  [HttpPost]
     [SwaggerOperation(
-        Summary = "Siparis oluşturur. Birden fazla kurs siparişi verilebilir."
+        Summary = "Sipariş oluşturur. Birden fazla kurs siparişi verilebilir. Sepet mantığı ile çalışır."
     )]
 public async Task<IActionResult> CreateOrder([FromBody] OrderCreateDto orderCreateDto)
 {
@@ -106,7 +107,7 @@ public async Task<IActionResult> CreateOrder([FromBody] OrderCreateDto orderCrea
 
     [HttpDelete("{id}")]
     [SwaggerOperation(
-        Summary = "Siparis id'sine göre siparis siler."
+        Summary = "Sipariş id'sine göre sipariş siler."
     )]
     public async Task<IActionResult> DeleteOrder(int id)
     {

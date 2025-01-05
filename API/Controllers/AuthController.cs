@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Threading.Tasks;
 
 [ApiController]
@@ -13,6 +14,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
+    [SwaggerOperation(Summary = "Kullanıcı giriş yapmak amacıyla token alır.")]
     public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
     {
         try
@@ -27,6 +29,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
+    [SwaggerOperation(Summary = "Kullanıcı kayıt olur. Rolü öğrencidir.")]
     public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
     {
         try

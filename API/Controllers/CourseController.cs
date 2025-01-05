@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Core.Entities;
 using System.Security.Claims;
+using Swashbuckle.AspNetCore.Annotations;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -22,6 +23,7 @@ public class CourseController : ControllerBase
 
 [HttpGet("all")]
 [AllowAnonymous]
+[SwaggerOperation(Summary = "Tüm kursları listeler. Anonim erişime açıktır. Filtreleme yapılabilir. Paging destekler.")]
 public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
     [FromQuery] string? name = null,
     [FromQuery] int page = 1,   
@@ -52,6 +54,8 @@ public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
 }
 
     [HttpGet]
+    [Authorize(Roles = "Teacher")]
+    [SwaggerOperation(Summary = "Öğretmenin kendine ait kurslarını listeler.")]
     public async Task<ActionResult<List<CourseDto>>> GetTeacherCourses()
     {
         var courses = await _courseService.GetTeacherCoursesAsync(GetUserId());
@@ -60,6 +64,8 @@ public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
 
 
     [HttpGet("{id}")]
+    [Authorize(Roles = "Teacher")]
+    [SwaggerOperation(Summary = "Öğretmenin kendine ait kursunu getirir.")]
     public async Task<ActionResult<CourseDto>> GetCourse(int id)
     {
         var course = await _courseService.GetTeacherCourseAsync(id, GetUserId());
@@ -69,6 +75,8 @@ public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
     }
 
     [HttpPost]
+    [Authorize(Roles = "Teacher")]
+    [SwaggerOperation(Summary = "Yeni kurs oluşturur.")]
     public async Task<ActionResult<Course>> CreateCourse([FromBody] CourseCreateDto courseDto)
     {
 
@@ -106,6 +114,8 @@ public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Teacher")]
+    [SwaggerOperation(Summary = "Kurs bilgilerini günceller.")]
     public async Task<IActionResult> UpdateCourse(int id, [FromBody] CourseUpdateDto courseDto)
     {
         var course = await _courseService.GetTeacherCourseAsync(id, GetUserId());
@@ -120,6 +130,8 @@ public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
     }
 
     [HttpPut("{id}/photo")]
+    [Authorize(Roles = "Teacher")]
+    [SwaggerOperation(Summary = "Kurs kapak resmini günceller.")]
     public async Task<IActionResult> UpdateCoursePhoto(int id, [FromBody] CoursePhotoDto courseDto)
     {
         var course = await _courseService.GetTeacherCourseAsync(id, GetUserId());
@@ -149,6 +161,8 @@ public async Task<ActionResult<List<CourseAnonymousDto>>> GetCourses(
 
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Teacher")]
+    [SwaggerOperation(Summary = "Kursu siler.")]
     public async Task<IActionResult> DeleteCourse(int id)
     {
         var course = await _courseService.GetTeacherCourseAsync(id, GetUserId());

@@ -71,8 +71,8 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Kurs Projesi API",
-        Description = "Kurs Projesi API, ASP.NET Core Web API ile geliştirilmiştir. Bu API, kurslar, videolar ve kullanicilari yönetmek için kullanılır.",
+        Title = "Kurs Projesi REST API",
+        Description = "Kurs Projesi API. Bu API, kurslar, videolar, siparişler ve kullanıcıları yönetmek için kullanılır.",
         Version = "v1"
     });
 

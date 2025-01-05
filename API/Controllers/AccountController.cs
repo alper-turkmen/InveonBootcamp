@@ -1,6 +1,7 @@
 using Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Claims;
 
 namespace API.Controllers
@@ -22,6 +23,7 @@ namespace API.Controllers
 
         [Authorize]
         [HttpPut("profile")]
+        [SwaggerOperation(Summary = "Öğretmen/öğrenci profil bilgilerini günceller.")]
         public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto profileDto)
         {
             var userId = GetUserId();
@@ -44,6 +46,7 @@ namespace API.Controllers
 
 
 [HttpPost("profile/picture")]
+[SwaggerOperation(Summary = "Öğretmen/öğrenci profil resmini günceller. base64 formatında kabul eder.")]
 public async Task<IActionResult> UpdateProfilePicture([FromBody] FileUploadModel model)
 {
     if (model == null || string.IsNullOrEmpty(model.FileBase64) || string.IsNullOrEmpty(model.FileName))
@@ -93,6 +96,7 @@ public async Task<IActionResult> UpdateProfilePicture([FromBody] FileUploadModel
 
         [Authorize]
         [HttpGet("profile")]
+        [SwaggerOperation(Summary = "Öğretmen/öğrenci profil bilgilerini getirir.")]
         public async Task<IActionResult> GetProfile()
         {
             var userId = GetUserId();
